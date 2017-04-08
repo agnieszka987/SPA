@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create methods</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Create methods</h1>
+		<script>
+			var myArray = {
+					arr: [3,4,76,1,5,787,33,76,1,99,45,235,53,23],
+					min: function(){
+                        this.arr.sort(function(a, b){
+                            return a-b;
+                        });
+                        return this.arr[0];
+					},		
+					max: function(){
+                        this.arr.sort(function(a, b){
+                            return a-b;
+                        });
+                        return this.arr[this.arr.length-1];
+                        
+                    },
+					avg: function(){
+                        var suma = 0;
+                        for (i = 0; i < this.arr.length; i++) {
+                            suma += this.arr[i];
+                        }
+                        return suma / this.arr.length;
+                        
+                    },
+					lth: function(val){
+                        var number = 0;
+                        for (i = 0; i < this.arr.length; i++) {
+                            if (this.arr[i] < val)
+                                number += 1;
+                        }
+                        
+                        return number;
+                    }	// the number of arr values less than 'val'
+			};
+			
+			// display results (min,max,avg,lth) in the console
+			console.log(myArray.arr);
+            console.log("Min: " + myArray.min());
+            console.log("Max: " + myArray.max());
+            console.log("Avg: " + myArray.avg().toFixed(2));
+            console.log("Number of values less than 50: " + myArray.lth(50));
+            
+		</script>
+	</body>
+</html>

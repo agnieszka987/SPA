@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create DOM elements</title>
+		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" ></script>
+	</head>
+	<body>
+		<script>
+			// a JavaScript code here ...
+			var table = document.createElement("table");
+            table.setAttribute("border", "1");
+            table.style.borderCollapse = "collapse";
+            table.style.textAlign = "left";
+            
+            var row = document.createElement("tr");
+            table.appendChild(row);
+            
+            var header1 = document.createElement("th");
+            row.appendChild(header1);            
+            var headerTxt1 = document.createTextNode("Email");
+            header1.appendChild(headerTxt1);
+            
+            var header2 = document.createElement("th");
+            row.appendChild(header2);            
+            var headerTxt2 = document.createTextNode("Connecting to the Internet");            
+            header2.appendChild(headerTxt2);
+            
+            var rows = [
+                "receive/get/open an email",
+                "use/access/log onto the Internet",
+                "exchange email addresses",
+                "access/connect to/locate the server",
+                "open/send/contain an attachment",
+                "browse/surf/search/scour the Internet",
+                "open/check your inbox",
+                "install/use/configure a firewall"
+            ];
+            var k = 0;
+            var j = 2;
+            for (i = 0; i < 4; i++) {
+                var row = document.createElement("tr");
+                table.appendChild(row);
+                
+                for (k; k < j; k++) {
+                    var cell = document.createElement("td");
+                    row.appendChild(cell);
+                    var cellTxt = document.createTextNode(rows[k]);
+                    cell.appendChild(cellTxt);                    
+                }
+                j = j + 2;
+            }
+            
+            document.body.appendChild(table);
+            
+            $('th').css("padding", "5px");
+            $('th').css("background-color", "#F2F2F2");
+            $('td').css("padding", "5px");
+            
+		</script>
+	</body>
+</html>

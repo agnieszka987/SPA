@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Houses for sale</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Houses for sale</h1>
+		<script>
+            var bedrooms, facilities, price, address, phone;
+//            var garden, garage, swimmingPool;
+            var street, city;
+            
+            function House(bedrooms, facilities, price, address, phone) {
+                this.bedrooms = bedrooms;
+                this.facilities = facilities;
+                this.price = price;
+                this.address = address;
+                this.phone = phone;
+                
+                this.changePrice = function(newPrice) {
+                    this.price = newPrice;
+                };
+                
+                this.addFacility = function(newFacility) {
+                    this.facilities.push(newFacility);
+                };
+                
+                this.description = function() {
+                    var st = '';
+                    for (x in this.facilities) {
+                        st += '\n  ' + this.facilities[x];
+                    }
+                    
+                    console.log('No of bedrooms: %s \nFacilities: %s\nPrice: %s \nAddress:\n  %s\n  %s \nPhone: %s', this.bedrooms, st, this.price, this.address.street, this.address.city, this.phone);
+                    
+                };
+            };
+            
+            function Address(street, city) {
+                this.street = street;
+                this.city = city;
+            }
+            
+            var houses = [];
+            houses[0] = new House(2, ['garden', 'garage'], 250000, new Address('Fantastyczna 31', 'Wrocław'), '512 369 742');
+            houses[1] = new House(4, ['garden'], 420000, new Address('Bogata 18', 'Szczecin'), '421 642 392');
+            houses[2] = new House(1, ['garage', 'swimming pool'], 210000, new Address('Wyborna 2', 'Szczebrzeszyn'), '999 999 999');
+            houses[3] = new House(3, ['swimming pool', 'garage'], 410000, new Address('Epicka 22', 'Warszawa'), '862 347 129');
+            houses[4] = new House(5, ['garden', 'garage', 'swimming pool'], 550000, new Address('Luksusowa 199', 'Kraków'), '765 896 341');
+            
+            for (ho in houses) {
+                houses[ho].description();
+            };
+            
+            houses[0].changePrice(265000);
+            houses[4].changePrice(570000);
+            
+            houses[1].addFacility('swimming pool');
+            houses[2].addFacility('garden');
+            houses[3].addFacility('garden');
+            
+            console.log('');
+            console.log('****After changes:****');
+            for (ho in houses) {
+                houses[ho].description();
+            };
+            
+		</script>
+	</body>
+</html>

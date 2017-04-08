@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fill in a form</title>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+        <center>
+            <img src="http://www.pikw.pl/files/1766/logo_zielone-pl.png?1467983123440"
+                 class="img-responsive" alt="Uniwersytet Ekonomiczny w Krakowie" >
+            <h2>The personal questionnaire<br>
+                for part-time Bachelor programmes<br><br>
+            </h2>
+
+            <form>
+                <table class="table table-bordered">
+                    <tr style="background-color:#F2F2F2;">
+                        <th colspan="2">
+                            PERSONAL DATA (fill in in accordance with the passport/ID card)
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Surname (family name)</td>
+                        <td>
+                            <input type="text" id="surname">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name (names) /first name/</td>
+                        <td>
+                            <input type="text" id="name">
+                        </td>
+                    </tr>                
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <input type="radio" name="gender" value="male"> male
+                            <input type="radio" name="gender" value="female"> female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Father's first name</td>
+                        <td>
+                            <input type="text" id="fName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mother's first name</td>
+                        <td>
+                            <input type="text" id="mName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date of birth</td>
+                        <td>
+                            <input type="date" id="dateOfBirth">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Place of birth</td>
+                        <td>
+                            <input type="text" id="placeOfBirth">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Citizenship (country)</td>
+                        <td>
+                            <select id="country">
+                                <option value=""></option>
+                                <option value="Lithuania">Lithuania</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Russian Federation">Russian Federation</option>
+                                <option value="Slovakia">Slovakia</option>
+                                <option value="Ukraine">Ukraine</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                
+                <input class="btn btn-default btn-lg" type="button" value="Submit" id="btnSubmit">
+            </form>
+        </center>
+        
+		<script>
+			// a JavaScript code here ...
+            
+            var student = {
+                surname: null,
+                name: null,
+                gender: null,
+                fName: null,
+                mName: null,
+                dateOfBirth: null,
+                placeOfBirth: null,
+                country: null,
+                
+                getStudentInfo: function() {
+                    this.surname = $('#surname').val();
+                    this.name = $('#name').val();
+                    this.gender = $('input[name=gender]:checked').val();
+                    this.fName = $('#fName').val();
+                    this.mName = $('#mName').val();
+                    this.dateOfBirth = $('#dateOfBirth').val();
+                    this.placeOfBirth = $('#placeOfBirth').val();
+                    this.country = $('#country option:selected').val();
+                    
+                },
+                
+                display: function() {
+                    console.log("Student's data: \n" +
+                                "Surname: " + this.surname +
+                                "\nName: " + this.name +
+                                "\nGender: " + this.gender +
+                                "\nFather's name: " + this.fName +
+                                "\nMother's name: " + this.mName +
+                                "\nDate of birth: " + this.dateOfBirth +
+                                "\nPlace of birth: " + this.placeOfBirth +
+                                "\nCountry: " + this.country);
+                }
+                
+            }
+            
+            $('#btnSubmit').click(function() {
+                student.getStudentInfo();
+                student.display();
+            })
+			
+		</script>
+	</body>
+</html>

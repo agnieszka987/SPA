@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Array checker</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Array checker</h1>
+		<p>Display results on the console</p>
+
+		<script>
+			var tab = [null, null, null, null, null];
+			var i;
+			
+            // assing random integers to array elements
+			for (i = 0; i < tab.length; i++) {
+				tab[i] = Math.floor(Math.random() * 5) + 1;
+			}
+			
+            // show array elements
+			console.log('Array elements:\n' + tab);
+			
+			// check whether the array is ordered			
+            var isSorted = true;
+            
+            for (i = 0; i < tab.length - 1; i++) {
+				if (tab[i] > tab[i + 1])
+                    isSorted = false;
+			}
+            
+            // display message: Array is ordered / unordered
+            if (isSorted)
+                console.log('The array is sorted');
+            else
+                console.log('The array is not sorted');
+            			
+		</script>
+	</body>
+</html>

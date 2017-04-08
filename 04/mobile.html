@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create mobile phone</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Create mobile phone</h1>
+        <button onclick="show()" type="button">Show mobile info</button>
+        
+		<script>            
+            var myMobile = {
+					model: 		'Lenovo ZUK Z1',
+					size: 		5.5,
+					dualSIM:	false,
+					platform:	{
+                        os:         'Android OS, v5.1.1 (Lollipop)',
+                        chipset:    'Qualcomm MSM8974AC Snapdragon 801',
+                        cpu:        'Quad-core 2.5 GHz Krait 400',
+                        gpu:        'Adreno 330'
+                    },
+					sensors: 	['fingerprint', 'accelerometer', 'gyro', 'proximity', 'compass']
+			};
+            
+            function show() {
+                var info =  "My mobile specs:\n\n" +
+                            "Model: " + myMobile.model +
+                            "\nSize: " + myMobile.size + " inches" +
+                            "\nDual SIM: " + myMobile.dualSIM +
+                            "\nSensors: " + myMobile.sensors[0] + ", " + myMobile.sensors[1] + ", " + myMobile.sensors[2] + ", " +
+                                            myMobile.sensors[3] + ", " + myMobile.sensors[4] +
+                            "\nPlatform:" +
+                            "\n  OS: " + myMobile.platform.os +
+                            "\n  Chipset: " + myMobile.platform.chipset +
+                            "\n  CPU: " + myMobile.platform.cpu +
+                            "\n  GPU: " + myMobile.platform.gpu;
+                
+                alert(info);
+            }
+            
+		</script>
+	</body>
+</html>
