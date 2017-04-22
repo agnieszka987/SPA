@@ -1,0 +1,151 @@
+{
+  "children list": [
+    {
+      "name": "Aga",
+      "surname": "Pełeńska",
+      "age": 24,
+      "gender": "female",
+      "email": "aga_pe7@tlen.pl",
+      "phone": {
+        "landline": "145236987",
+        "mobile": "123654789"
+      },
+      "address": {
+        "street": "Zielona",
+        "number": 52,
+        "postal code": "34-471",
+        "city": "Ludźmierz"
+      },
+      "interests": [
+        "dance",
+        "escape room"
+      ],
+      "family": {
+        "spouse": {
+          "name": "none",
+          "surname": "none"
+        },
+        "children list": [
+          {
+            "name": "none",
+            "surname": "none",
+            "gender": "female",
+            "age": 2,
+            "interests": [
+              "singing",
+              "playing dolls"
+            ]
+          },
+          {
+            "name": "none",
+            "surname": "none",
+            "gender": "male",
+            "age": 10,
+            "interests": [
+              "playing football",
+              "playing piano"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Anna",
+      "surname": "Nowak",
+      "age": 32,
+      "gender": "female",
+      "email": "anna.nowak@tlen.pl",
+      "phone": {
+        "landline": "236987125",
+        "mobile": "258963147"
+      },
+      "address": {
+        "street": "Okrągła",
+        "number": 69,
+        "postal code": "48-796",
+        "city": "Wrocław"
+      },
+      "interests": [
+        "music",
+        "books"
+      ],
+      "family": {
+        "spouse": {
+          "name": "Arnold",
+          "surname": "Nowak"
+        },
+        "children list": [
+          {
+            "name": "Krzysztof",
+            "surname": "Nowak",
+            "gender": "male",
+            "age": 10,
+            "interests": [
+              "playing basketball",
+              "playing guitar"
+            ]
+          },
+          {
+            "name": "Alicja",
+            "surname": "Nowak",
+            "gender": "female",
+            "age": 12,
+            "interests": [
+              "dancing",
+              "drawing"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jan",
+      "surname": "Kowalski",
+      "age": 45,
+      "gender": "male",
+      "email": "jan.kowalski@tlen.pl",
+      "phone": {
+        "landline": "159753654",
+        "mobile": "951357123"
+      },
+      "address": {
+        "street": "Pokrętna",
+        "number": 12,
+        "postal code": "59-846",
+        "city": "Kraków"
+      },
+      "interests": [
+        "politics",
+        "culture"
+      ],
+      "family": {
+        "spouse": {
+          "name": "Maria",
+          "surname": "Kowalska"
+        },
+        "children list": [
+          {
+            "name": "Hanna",
+            "surname": "Kowalska",
+            "gender": "female",
+            "age": 20,
+            "interests": [
+              "photography",
+              "music"
+            ]
+          },
+          {
+            "name": "Norbert",
+            "surname": "Kowalski",
+            "gender": "male",
+            "age": 22,
+            "interests": [
+              "sport",
+              "books"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

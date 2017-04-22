@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Local storage & Web SQL performance</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Checking local storage and SQL database performance</h1>
+        
+        <h3>Local storage</h3>
+        <button type="button" onclick="testStorage(1000, 'resultLS1')">1000</button>
+        <button type="button" onclick="testStorage(10000, 'resultLS2')">10000</button>
+        <button type="button" onclick="testStorage(100000, 'resultLS3')">100000</button>
+        <p id="resultLS1"></p>
+        <p id="resultLS2"></p>
+        <p id="resultLS3"></p>
+        
+        <h3>Web SQL</h3>
+        <button type="button" onclick="testSQLStorage(1000, 'resultSQL1')">1000</button>
+        <button type="button" onclick="testSQLStorage(10000, 'resultSQL2')">10000</button>
+        <button type="button" onclick="testSQLStorage(100000, 'resultSQL3')">100000</button>
+        <p id="resultSQL1"></p>
+        <p id="resultSQL2"></p>
+        <p id="resultSQL3"></p>
+        
+		<script>
+                        
+            function testStorage(number, elem) {
+                var randomNumber;
+                localStorage.clear();
+            
+                var start = performance.now();
+                for (i = 0; i < number; i++) {
+                    randomNumber = Math.floor(Math.random() * 1000) + 1;
+                    localStorage.setItem(i, randomNumber);
+                }
+                var end = performance.now();
+
+                var result = end - start;
+                console.log("Execution time for " + number + " numbers is " + result.toFixed(4) + " milliseconds.");
+                document.getElementById(elem).innerHTML = "Execution time for <b>" + number + "</b> numbers is <b>" + result.toFixed(4) + "</b> milliseconds.";
+            }
+            
+            function testSQLStorage(number, elem) {
+                var db = openDatabase('spadb', 1, 'Test DB', 2 * 1024 * 1024);
+                
+                db.transaction(function (tx) {
+                    tx.executeSql("CREATE TABLE IF NOT EXISTS number (integer)");
+                    
+                });
+                
+                var start = performance.now();
+                db.transaction(function (tx) {
+                    for (i = 0; i < number; i++) {
+                        randomNumber = Math.floor(Math.random() * 1000) + 1;
+                        tx.executeSql("insert into number (integer) values (?)", [randomNumber]);
+                    }
+    
+                });
+                var end = performance.now();
+                
+                var result = end - start;
+                console.log("Execution time for " + number + " numbers is " + result + " milliseconds.");
+                document.getElementById(elem).innerHTML = "Execution time for <b>" + number + "</b> numbers is <b>" + result.toFixed(4) + "</b> milliseconds.";
+            }
+            
+            
+            
+		</script>
+	</body>
+</html>

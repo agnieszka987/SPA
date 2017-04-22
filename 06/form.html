@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Store form data</title>
+		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" ></script>
+	</head>
+	<body>
+		<h1>Store form data</h1>
+        Name: <input type="text" id="name">
+        Surname: <input type="text" id="surname">
+        <br><br>
+        <input type="button" value="Save" id="btnSave">
+        <input type="button" value="Restore" id="btnRestore">
+        
+		<script>
+            $('#btnSave').click(function(){
+                localStorage.setItem("name", $('#name').val());
+                localStorage.setItem("surname", $('#surname').val());
+            });
+            
+            $('#btnRestore').click(function(){
+                $('#name').val(localStorage.getItem("name"));
+                $('#surname').val(localStorage.getItem("surname"));
+            });
+            
+		</script>
+	</body>
+</html>

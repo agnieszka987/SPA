@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Store form data</title>
+		<meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" ></script>
+	</head>
+	<body>
+		<h1>Store form data</h1>
+        Username: <input type="text" id="username">
+        Password: <input type="text" id="password">
+        <br><br>
+        <input type="button" value="Log in" id="btnLogIn">
+        
+		<script>
+            $('#btnLogIn').click(function(){
+                if (!(localStorage.getItem("username") && localStorage.getItem("password"))) {
+                    localStorage.setItem("username", "annie");
+                    localStorage.setItem("password", "ax123");
+                }                
+                
+                if (localStorage.getItem("username") && localStorage.getItem("password")) {
+                    if ($('#username').val() == localStorage.getItem("username")
+                       && $('#password').val() == localStorage.getItem("password")) {
+                        alert("User logged in successfully")
+                    } else
+                        alert("Wrong username or password")
+                }                
+            });
+                                    
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Translate</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Translate</h1>
+		<script>
+            var personalInfo = {                    
+                name: "Anna",
+                surname: "Nowak",
+                age: 32,
+                gender: "female",
+                email: "anna.nowak@tlen.pl",
+                phone: {
+                    landline: "236987125",
+                    mobile: "258963147"
+                },
+                address: {
+                    street: "Okrągła",
+                    number: 69,
+                    "postal code": "48-796",
+                    city: "Wrocław"
+                },
+                interests: [
+                    "music",
+                    "books"
+                ],
+                family: {
+                    spouse: {
+                        name: "Arnold",
+                        surname: "Nowak"
+                    },
+                    "children list": [
+                        {
+                            name: "Krzysztof",
+                            surname: "Nowak",
+                            gender: "male",
+                            age: 10,
+                            interests: [
+                                "playing basketball",
+                                "playing guitar"
+                            ]
+                        },
+                        {
+                            name: "Alicja",
+                            surname: "Nowak",
+                            gender: "female",
+                            age: 12,
+                            interests: [
+                              "dancing",
+                              "drawing"
+                            ]
+                        }
+                    ]
+                }                    
+			};                        
+            
+            localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+            
+            var restoredSession = JSON.parse(localStorage.getItem('personalInfo'));
+
+            console.log(restoredSession);
+            
+		</script>
+	</body>
+</html>
